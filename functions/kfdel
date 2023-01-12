@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Pack de funciones para zipper
+# By @Kevin .J Figueroa
+# 01 2023
+
+r="\e[31m"
+noc="\e[0m"
+inv="\e[7m"
+opcion=0
+
+source ~/.scripts/functions/kfout
+
+del (){
+        echo -e "\n\t▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+        echo -e "\t▒${inv}                                  ${noc}"
+        echo -e "\t▒${inv}   ¿Desea eliminar los archivos   ${noc}"
+        echo -e "\t▒${inv}    que fueron empaquetados?      ${noc}"
+        echo -e "\t▒${inv}                                  ${noc}"
+        echo -e "\t▒${inv}    [S,n] y presione enter        ${noc}"
+        echo -e "\t ${inv}                                  ${noc}"
+        read -s input
+        if [[ $input == "S" || $input == "s" ]]; then
+            echo -e "\n\tSe eliminaran ${r}$(ls |grep -v zippack|wc -l)${noc} archivos"; sleep 1
+            rm -r $(echo $(while read line; do echo $(echo $line |sed 's/adding: ..\///g')|awk '{print $1}'|grep -v zippack; done < zippack/output.log)) 2>/dev/null;
+        else
+            echo -e "\n\tNingun archivo borrado.";
+        fi
+    out
+}
+
+
+echo $(while read line; do echo $(echo $line |sed 's/adding: ..\///g')|awk '{print $1}'|grep -v zippack|wc; done < zippack/output.log)

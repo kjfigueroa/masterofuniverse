@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Pack de funciones para zipper
+# By @Kevin .J Figueroa
+# 01 2023
+
+opcion=0
+
+out (){
+    echo -e "\n\tSaliendo del Programa."; sleep 1;
+    if [ -d zippack ] || [ -d unpacked ]
+        then
+		echo -e "\n\tDirectorios existentes: ${az}$(ls |grep 'zippack') ${az}$(ls |grep 'unpacked')${noc}";echo -e "\n"
+		sleep 1; echo -e "\t...Bye!\n"
+    else
+		echo -e "\n\tNo se ha creado ningun directorio."
+		sleep 1; echo -e "\t...Bye!\n"
+    fi
+    exit 0
+}
