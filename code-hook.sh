@@ -9,7 +9,7 @@ bd=$(tput bold)
 nobd=$(tput sgr0)
 r=$(printf '\e[31m')
 noc=$(printf '\e[0m')
-DATE=$(date +%F:%H)
+DATE=$(date +%F:%T)
 
 ver1 (){
     echo -e "\n\tVerifying if this machine currently have ${r}GIT${noc} installed...."
