@@ -14,7 +14,7 @@ ver1 (){
     echo -e "\n\tVerifying if this machine currently have ${r}GIT${noc} installed...."
     gitpath="/usr/bin/git"
     verInGIT=$(which git)
-    if [ "verInGIT" = "gitpath" ]; then
+    if [ "verInGIT" == "gitpath" ]; then
         #Testing
         echo -e "SI"
         #echo -e "\n\t${r}GIT${noc} is already installed"
