@@ -24,7 +24,7 @@ ver1 (){
         echo "$passwd" | sudo -S dnf update
         echo "$passwd" | sudo -S dnf -y install git > $HOME/installing-git-log-$DATE
     fi    
-    read -n 1 -s -r -p "Press [ENTER] to continue..."
+    echo -e "";read -n 1 -s -r -p "Press [ENTER] to continue..."
 }
 
 
