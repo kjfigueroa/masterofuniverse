@@ -15,12 +15,14 @@ ver1 (){
     gitpath="/usr/bin/git"
     verInGIT=$(which git)
     if [ "verInGIT" = "gitpath" ]; then
-        echo -e "\n\t${r}GIT${noc} is already installed"
+        echo -e "SI"
+        #echo -e "\n\t${r}GIT${noc} is already installed"
     else
-        echo -e "\n"
-        read -s -p "\n\tPlease, for go foward with installing GIT, \n insert the sudo passwd:" passwd
-        echo "$passwd" | sudo -S dnf update
-        echo "$passwd" | sudo -S dnf -y install git
+        echo -e "NO"
+        #echo -e "\n"
+        #read -s -p "Please, for go foward with installing GIT, \n insert the sudo passwd:" passwd
+        #echo "$passwd" | sudo -S dnf update
+        #echo "$passwd" | sudo -S dnf -y install git
     fi    
     read -n 1 -s -r -p "Press [ENTER] to continue..."
 }
