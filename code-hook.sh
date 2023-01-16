@@ -15,6 +15,7 @@ ver1 (){
     gitpath="/usr/bin/git"
     verInGIT=$(which git)
     if [ "verInGIT" = "gitpath" ]; then
+        #Testing
         echo -e "SI"
         #echo -e "\n\t${r}GIT${noc} is already installed"
     else
