@@ -35,11 +35,7 @@ chmod +x $HOME/code-hook-box-$DATE/*
 
 cat << EOF
 
-{tab}the code was allocated in ${bd}${r}$(echo "$HOME/code-hook-box")${noc}${nobd}
+the code was allocated in ${bd}${r}$(echo "$HOME/code-hook-box-$DATE")${noc}${nobd}
 EOF
 
 exit 0
-
-
-DATE=$(date +%F:%H)
-mkdir "dir-$DATE"
