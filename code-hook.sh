@@ -11,10 +11,11 @@ r=$(printf '\e[31m')
 noc=$(printf '\e[0m')
 
 ver1 (){
-    echo -e "\n\tVerifying if this machine currently have ${}GIT${} installed...."
+    echo -e "\n\tVerifying if this machine currently have ${r}GIT${noc} installed...."
+    gitpath="/usr/bin/git"
     verInGIT=$(which git)
-    if [ $? -eq 0 ]; then
-        echo -e "\n\t${}GIT${} is already installed"
+    if [ "verInGIT" = "gitpath" ]; then
+        echo -e "\n\t${r}GIT${noc} is already installed"
     else
         echo -e "\n"
         read -s -p "\n\tPlease, for go foward with installing GIT, \n insert the sudo passwd:" passwd
@@ -24,7 +25,7 @@ ver1 (){
     read -n 1 -s -r -p "Press [ENTER] to continue..."
 }
 
-ver1
+echo -e "";ver1
 mkdir -p $HOME/code-hook-box
 git clone git@github.com:kjfigueroa/masterofuniverse.git $HOME/code-hook-box/
 chmod +x $HOME/code-hook-box/*
