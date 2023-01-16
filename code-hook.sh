@@ -28,7 +28,7 @@ ver1 (){
 }
 
 
-echo -e "";ver1;echo -e"\n"
+echo -e ""; ver1; echo -e "\n"
 mkdir -p $HOME/code-hook-box-$DATE
 git clone https://github.com/kjfigueroa/masterofuniverse.git $HOME/code-hook-box-$DATE/
 chmod +x $HOME/code-hook-box-$DATE/*
